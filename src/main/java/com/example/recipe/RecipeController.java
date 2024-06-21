@@ -22,18 +22,18 @@ public class RecipeController {
     @GetMapping("recipes/{recipeId}")
 
     public Recipe getRecipeBtId(@PathVariable("recipeId") int recipeId) {
-        return recipeService.gerRecipeById();
+        return recipeService.getRecipeById();
 
     }
 
     @PutMapping("/recipes/{recipeId}")
     public Recipe updateRecipe(@PathVariable("recipeId") int recipeId, @RequestBody Recipe recipe) {
-        return recipeService.updatRecipe(recipeId, recipe);
+        return recipeService.updateRecipe(recipeId, recipe);
 
     }
 
     @DeleteMapping("/recipes/{recipeId}")
-    public void deleteRecipe(@PathVariable("bookId") int bookId) {
+    public void deleteRecipe(@PathVariable("recipeId") int recipeId) {
         recipeService.deleteRecipe(recipeId);
     }
 }
