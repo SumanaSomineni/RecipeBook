@@ -28,7 +28,7 @@ public class RecipeService implements RecipeRepository {
         int uniqueId = 6;
 
         @Override
-        public ArrayList<Recipe> getRecipe() {
+        public ArrayList<Recipe> getRecipes() {
                 Collection<Recipe> x = recipeBook.values();
                 ArrayList<Recipe> recipes = new ArrayList<>(x);
                 return recipes;
@@ -49,6 +49,9 @@ public class RecipeService implements RecipeRepository {
         @Override
         public Recipe getRecipeById(int recipeId) {
                 Recipe recipe = recipeBook.get(recipeId);
+                if (recipe == null) {
+                        throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+                }
                 return recipe;
         }
 

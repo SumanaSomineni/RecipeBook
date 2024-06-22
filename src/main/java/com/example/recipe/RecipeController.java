@@ -3,13 +3,14 @@ package com.example.recipe;
 import java.util.*;
 import org.springframework.web.bind.annotation.*;
 import com.example.recipe.RecipeService;
+import com.example.recipe.Recipe;
 
 @RestController
 public class RecipeController {
     RecipeService recipeService = new RecipeService();
 
     @GetMapping("/recipes")
-    public ArrayList<Recipe> getRecipes() {
+    public List<Recipe> getRecipes() {
         return recipeService.getRecipes();
     }
 
@@ -21,8 +22,8 @@ public class RecipeController {
 
     @GetMapping("recipes/{recipeId}")
 
-    public Recipe getRecipeBtId(@PathVariable("recipeId") int recipeId) {
-        return recipeService.getRecipeById();
+    public Recipe getRecipeById(@PathVariable("recipeId") int recipeId) {
+        return recipeService.getRecipeById(recipeId);
 
     }
 
