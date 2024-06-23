@@ -6,7 +6,7 @@ public class Recipe {
     private int recipeId;
     private String recipeName;
     private String recipeType;
-    private ArrayList<String> ingredients;
+    private List<String> ingredients;
 
     public Recipe(int recipeId, String recipeName, String recipeType, ArrayList<String> ingredients) {
         this.recipeId = recipeId;
@@ -40,12 +40,11 @@ public class Recipe {
         return recipeType;
     }
 
-
-    public void setIngredients(ArrayList<String> ingredients) {
+    public void setIngredients(List<String> ingredients) {
         this.ingredients = ingredients;
     }
 
-    public ArrayList<String> getIngredients() {
+    public List<String> getIngredients() {
         return ingredients;
     }
 }

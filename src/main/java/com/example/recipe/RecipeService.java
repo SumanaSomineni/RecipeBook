@@ -28,10 +28,9 @@ public class RecipeService implements RecipeRepository {
         int uniqueId = 6;
 
         @Override
-        public ArrayList<Recipe> getRecipes() {
+        public List<Recipe> getRecipes() {
                 Collection<Recipe> x = recipeBook.values();
-                ArrayList<Recipe> recipes = new ArrayList<>(x);
-                return recipes;
+                return new ArrayList<>(x);
 
         }
 

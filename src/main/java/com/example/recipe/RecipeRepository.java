@@ -3,7 +3,7 @@ package com.example.recipe;
 import java.util.*;
 
 public interface RecipeRepository {
-    ArrayList<Recipe> getRecipes();
+    List<Recipe> getRecipes();
 
     Recipe addRecipe(Recipe recipe);
 
